@@ -1,0 +1,13 @@
+{
+  "app_name": "Gender Safety Checker",
+  "version": "1.0.0",
+  "environment": "production",
+  "api": {
+    "base_url": "https://gretta-unimpressed-noncommercially.ngrok-free.dev",
+    "endpoints": {
+      "safety_check": "/safety-check"
+    },
+    "timeout_ms": 10000
+  }
+}
+

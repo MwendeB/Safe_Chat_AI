@@ -1,0 +1,224 @@
+/* ========================= 
+   BODY & BASE
+========================= */
+body {
+  background: #f8fafc;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* =========================
+   CHAT CONTAINER
+========================= */
+.chat-container {
+  width: 420px;
+  height: 620px;
+  background: #ffffff;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+  background: linear-gradient(135deg, #8179d9 0%, #be185d 100%);
+  padding: 22px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.header h2 {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Logout Button */
+.header button.logout {
+  background: #ffffff;
+  color: #be185d;
+  border: 2px solid #be185d;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.header button.logout:hover {
+  background: #be185d;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* =========================
+   MESSAGES AREA
+========================= */
+#messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #f5eaf1;
+  scrollbar-width: thin;
+  scrollbar-color: #be185d #f5eaf1;
+}
+
+#messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+#messages::-webkit-scrollbar-track {
+  background: #f5eaf1;
+  border-radius: 8px;
+}
+
+#messages::-webkit-scrollbar-thumb {
+  background-color: #be185d;
+  border-radius: 8px;
+  border: 2px solid #f5eaf1;
+}
+
+/* Bot Message */
+.bot-msg {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  color: #1e293b;
+  padding: 14px 18px;
+  border-radius: 18px 18px 18px 6px;
+  align-self: flex-start;
+  max-width: 80%;
+  font-size: 14px;
+  line-height: 1.6;
+  border-left: 4px solid #8179d9;
+  transition: all 0.2s ease;
+  word-break: break-word;
+}
+
+/* User Message */
+.user-msg {
+  background: linear-gradient(135deg, #8179d9 0%, #be185d 100%);
+  color: #ffffff;
+  padding: 14px 18px;
+  border-radius: 18px 18px 6px 18px;
+  align-self: flex-end;
+  max-width: 80%;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  word-break: break-word;
+}
+
+/* =========================
+   STATUS STATES
+========================= */
+.bot-msg.safe {
+  border-left-color: #6366f1;
+}
+
+.bot-msg.warning {
+  border-left-color: #f59e0b;
+}
+
+.bot-msg.harmful {
+  border-left-color: #dc2626;
+}
+
+/* =========================
+   TYPING INDICATOR
+========================= */
+.typing {
+  font-style: italic;
+  color: #555;
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 14px;
+  background: #f0f0f0;
+  align-self: flex-start;
+  animation: blinkDots 1s infinite;
+}
+
+.typing span {
+  animation: blink 1s infinite;
+}
+
+@keyframes blinkDots {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes blink {
+  0%, 20%, 50%, 80%, 100% { opacity: 0; }
+  40% { opacity: 1; }
+  60% { opacity: 1; }
+}
+
+/* =========================
+   INPUT AREA
+========================= */
+.input-area {
+  display: flex;
+  padding: 16px;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  gap: 12px;
+  align-items: center;
+  z-index: 20;
+}
+
+/* Text Input */
+#textInput {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 2px solid #e2e8f0;
+  outline: none;
+  font-size: 15px;
+  background-color: #f8fafc;
+  transition: all 0.2s ease;
+}
+
+#textInput:focus {
+  border-color: #be185d;
+  background-color: #ffffff;
+  box-shadow: 0 0 6px rgba(190, 24, 93, 0.3);
+}
+
+/* Send Button */
+#sendBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #1e1b4b;
+  color: white;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(30, 27, 75, 0.35);
+  transition: all 0.2s ease;
+}
+
+#sendBtn:hover {
+  background: #be185d;
+  transform: translateY(-2px) scale(1.05);
+}
